@@ -1,0 +1,338 @@
+if game.PlaceId == 8750997647 then
+	local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+	local Window = OrionLib:MakeWindow({Name = "AutoFarm | Tapping Legends X", HidePremium = false, SaveConfig = true, IntroText = "TLX"})
+	
+	--values
+	_G.autoTap = true
+	
+	_G.autoRebirth = true
+	
+	_G.autoEquipBest = true
+	
+	_G.teleport = true
+	
+	
+	
+	--function
+
+    function autoRebirth()
+		while _G.autoRebirth == true do
+			game:GetService("ReplicatedStorage").Remotes.Rebirth:FireServer()
+			wait(.0000000000001)
+		end
+	   end
+	
+		
+	function autoTap()
+		while _G.autoTap == true do
+			game:GetService("ReplicatedStorage").Remotes.Tap:FireServer()
+			wait(.0000000000001)
+		end
+	   end
+	
+	function autoEquipBest()
+		while autoEquipBest == true do
+		game:GetService("ReplicatedStorage").Remotes.EquipBest:InvokeServer()
+		wait(1)
+		end
+	   end
+	
+	 --tabs 
+	 local FarmTab = Window:MakeTab({
+		Name = "AutoClick",
+		Icon = "rbxassetid://4483345998",
+		PremiumOnly = false
+	})
+	
+	local RebirthTab = Window:MakeTab({
+		Name = "AutoRebirth",
+		Icon = "rbxassetid://4483345998",
+		PremiumOnly = false
+	})
+	
+	local EquipBestTab = Window:MakeTab({
+		Name = "Equip Best",
+		Icon = "rbxassetid://4483345998",
+		PremiumOnly = false
+	})
+	
+	local TeleportTab = Window:MakeTab({
+		Name = "TELEPORT",
+		Icon = "rbxassetid://4483345998",
+		PremiumOnly = false
+	})
+
+    local ParagraphTab = Window:MakeTab({
+		Name = "message for each.",
+		Icon = "rbxassetid://4483345998",
+		PremiumOnly = false
+	})
+	
+	--toggles
+	FarmTab:AddToggle({
+		Name = "AutoClick",
+		Default = false,
+		Callback = function(Value)
+			_G.autoTap = Value
+			autoTap()
+		end    
+	})
+
+	RebirthTab:AddToggle({
+		Name = "AutoRebirth",
+		Default = false,
+		Callback = function(Value)
+        print("Fuck i can't do it, sowwy")
+		end    
+	})
+	
+	--button
+	
+	EquipBestTab:AddButton({
+		Name = "EquipBest",
+		Default = false,
+		Callback = function(Value)
+		print("Updating soon...\n can't use it now.")
+		end    
+	})
+	
+	TeleportTab:AddButton({
+		Name = "Teleport Spawn",
+		Default = false,
+		Callback = function(Value)
+			game:GetService("ReplicatedStorage").Remotes.TeleportToArea:FireServer(1)
+		end    
+	})
+	
+	TeleportTab:AddButton({
+		Name = "Teleport Forest",
+		Default = false,
+		Callback = function(Value)
+			game:GetService("ReplicatedStorage").Remotes.TeleportToArea:FireServer(2)
+		end    
+	})
+	
+	TeleportTab:AddButton({
+		Name = "Teleport Desert",
+		Default = false,
+		Callback = function(Value)
+			game:GetService("ReplicatedStorage").Remotes.TeleportToArea:FireServer(3)
+		end    
+	})
+	
+	TeleportTab:AddButton({
+		Name = "Teleport Winter",
+		Default = false,
+		Callback = function(Value)
+			game:GetService("ReplicatedStorage").Remotes.TeleportToArea:FireServer(4)
+		end    
+	})
+	
+	TeleportTab:AddButton({
+		Name = "Teleport lava",
+		Default = false,
+		Callback = function(Value)
+			game:GetService("ReplicatedStorage").Remotes.TeleportToArea:FireServer(5)
+		end    
+	})
+	
+	TeleportTab:AddButton({
+		Name = "Teleport aqua",
+		Default = false,
+		Callback = function(Value)
+			game:GetService("ReplicatedStorage").Remotes.TeleportToArea:FireServer(6)
+		end    
+	})
+	
+	TeleportTab:AddButton({
+		Name = "Teleport Sakura",
+		Default = false,
+		Callback = function(Value)
+			game:GetService("ReplicatedStorage").Remotes.TeleportToArea:FireServer(7)
+		end    
+	})
+	
+	TeleportTab:AddButton({
+		Name = "Teleport Mines",
+		Default = false,
+		Callback = function(Value)
+			game:GetService("ReplicatedStorage").Remotes.TeleportToArea:FireServer(8)
+		end    
+	})
+	
+	TeleportTab:AddButton({
+		Name = "Teleport Galaxy",
+		Default = false,
+		Callback = function(Value)
+			game:GetService("ReplicatedStorage").Remotes.TeleportToArea:FireServer(9)
+		end    
+	})
+	
+	TeleportTab:AddButton({
+		Name = "Teleport Heaven",
+		Default = false,
+		Callback = function(Value)
+			game:GetService("ReplicatedStorage").Remotes.TeleportToArea:FireServer(10)
+		end    
+	})
+	
+	TeleportTab:AddButton({
+		Name = "Teleport Hell",
+		Default = false,
+		Callback = function(Value)
+			game:GetService("ReplicatedStorage").Remotes.TeleportToArea:FireServer(11)
+		end    
+	})
+	
+	TeleportTab:AddButton({
+		Name = "Teleport Tech",
+		Default = false,
+		Callback = function(Value)
+			game:GetService("ReplicatedStorage").Remotes.TeleportToArea:FireServer(12)
+		end    
+	})
+	
+	TeleportTab:AddButton({
+		Name = "Teleport Steampunk",
+		Default = false,
+		Callback = function(Value)
+			game:GetService("ReplicatedStorage").Remotes.TeleportToArea:FireServer(13)
+		end    
+	})
+	
+	TeleportTab:AddButton({
+		Name = "Teleport Swamp",
+		Default = false,
+		Callback = function(Value)
+			game:GetService("ReplicatedStorage").Remotes.TeleportToArea:FireServer(14)
+		end    
+	})
+	
+	TeleportTab:AddButton({
+		Name = "Teleport Candy",
+		Default = false,
+		Callback = function(Value)
+			game:GetService("ReplicatedStorage").Remotes.TeleportToArea:FireServer(15)
+		end    
+	})
+	
+	TeleportTab:AddButton({
+		Name = "Teleport Magic",
+		Default = false,
+		Callback = function(Value)
+			game:GetService("ReplicatedStorage").Remotes.TeleportToArea:FireServer(16)
+		end    
+	})
+	
+	TeleportTab:AddButton({
+		Name = "Teleport Fantasy",
+		Default = false,
+		Callback = function(Value)
+			game:GetService("ReplicatedStorage").Remotes.TeleportToArea:FireServer(17)
+		end    
+	})
+	
+	TeleportTab:AddButton({
+		Name = "Teleport Toy",
+		Default = false,
+		Callback = function(Value)
+			game:GetService("ReplicatedStorage").Remotes.TeleportToArea:FireServer(18)
+		end    
+	})
+	
+	TeleportTab:AddButton({
+		Name = "Teleport Retro",
+		Default = false,
+		Callback = function(Value)
+			game:GetService("ReplicatedStorage").Remotes.TeleportToArea:FireServer(19)
+		end    
+	})
+	
+	TeleportTab:AddButton({
+		Name = "Teleport Lab",
+		Default = false,
+		Callback = function(Value)
+			game:GetService("ReplicatedStorage").Remotes.TeleportToArea:FireServer(20)
+		end    
+	})
+	
+	TeleportTab:AddButton({
+		Name = "Teleport Temple",
+		Default = false,
+		Callback = function(Value)
+			game:GetService("ReplicatedStorage").Remotes.TeleportToArea:FireServer(21)
+		end    
+	})
+	
+	TeleportTab:AddButton({
+		Name = "Teleport Farm",
+		Default = false,
+		Callback = function(Value)
+			game:GetService("ReplicatedStorage").Remotes.TeleportToArea:FireServer(22)
+		end    
+	})
+	
+	TeleportTab:AddButton({
+		Name = "Teleport Carnival",
+		Default = false,
+		Callback = function(Value)
+			game:GetService("ReplicatedStorage").Remotes.TeleportToArea:FireServer(23)
+		end    
+	})
+	
+	TeleportTab:AddButton({
+		Name = "Teleport Kitchen",
+		Default = false,
+		Callback = function(Value)
+			game:GetService("ReplicatedStorage").Remotes.TeleportToArea:FireServer(24)
+		end    
+	})
+	
+	TeleportTab:AddButton({
+		Name = "Teleport WIld West",
+		Default = false,
+		Callback = function(Value)
+			game:GetService("ReplicatedStorage").Remotes.TeleportToArea:FireServer(25)
+		end    
+	})
+	
+	TeleportTab:AddButton({
+		Name = "Teleport Medieval",
+		Default = false,
+		Callback = function(Value)
+			game:GetService("ReplicatedStorage").Remotes.TeleportToArea:FireServer(26)
+		end    
+	})
+	
+	TeleportTab:AddButton({
+		Name = "Teleport Spy",
+		Default = false,
+		Callback = function(Value)
+			game:GetService("ReplicatedStorage").Remotes.TeleportToArea:FireServer(27)
+		end    
+	})
+	
+	TeleportTab:AddButton({
+		Name = "Teleport Frost",
+		Default = false,
+		Callback = function(Value)
+			game:GetService("ReplicatedStorage").Remotes.TeleportToArea:FireServer(28)
+		end    
+	})
+	--paragraph
+	
+	ParagraphTab:AddParagraph("Auto equip best.","Update Soon.")
+	
+	ParagraphTab:AddParagraph("Rebirth.","This is for 50+ buttons\nOp update soon...")
+	
+	ParagraphTab:AddParagraph("Click.","Auto Clicks for you.\nbasically the free gamepass and AutoClicker")
+
+    ParagraphTab:AddParagraph("Teleport.","ik its free, but still made one :D")
+
+	
+	
+	
+	
+	
+	end
+	OrionLib:Init()
